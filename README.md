@@ -4,7 +4,7 @@
 
 ### Clonando o Repositório
 
-`git clone https://github.com/cod3rcursos/meat-app-starter.git`
+`git clone https://github.com/marcosmilitao/tcc_restaurante.git`
 
 ### Instalando as Dependências
 
