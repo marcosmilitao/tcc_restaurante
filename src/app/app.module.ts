@@ -27,6 +27,15 @@ import { RadioComponent } from './shered/radio/radio.component';
 import { OrderItemsComponent } from './order/order-items/order-items.component';
 import { DeliveryCostsComponent } from './order/delivery-costs/delivery-costs.component';
 
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { environment } from 'environments/environment';
+
+import { AuthService } from './shared/auth.service';
+import { UserLoginComponent } from './users/user-login/user-login.component';
+import { UserProfileComponent } from './users/user-profile/user-profile.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,15 +53,20 @@ import { DeliveryCostsComponent } from './order/delivery-costs/delivery-costs.co
     InputComponent,
     RadioComponent,
     OrderItemsComponent,
-    DeliveryCostsComponent
+    DeliveryCostsComponent,
+    UserLoginComponent,
+    UserProfileComponent
   ],
   imports: [
     BrowserModule,
+    AngularFireModule.initializeApp(environment.firebase, 'letslearn-dev'),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule,
     HttpModule,
     FormsModule,
     RouterModule.forRoot(ROUTES)
   ],
-  providers: [RestaurantServices, ShoppingCartService,OrderService, {provide: LOCALE_ID, useValue: 'pt-BR'}],
+  providers: [RestaurantServices, ShoppingCartService,OrderService, {provide: LOCALE_ID, useValue: 'pt-BR'},AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

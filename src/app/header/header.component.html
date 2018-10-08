@@ -14,8 +14,11 @@
         <ul class="nav navbar-nav">
             <li routerLinkActive="active"><a [routerLink]="['/restaurants']" >Restaurantes</a></li>
             <li routerLinkActive="active"><a [routerLink]="['/about']">Sobre</a></li>
+            <li routerLinkActive="active"><a (click)="loginWithGoogle()">Login</a></li>
+            <li routerLinkActive="active"><a ><div>{{ user?.displayName}}</div></a></li>
         </ul>
       </div>
+      <!-- <div>{{ user?.displayName}}</div> -->
       <!-- /.navbar-collapse -->
 
     </div>
